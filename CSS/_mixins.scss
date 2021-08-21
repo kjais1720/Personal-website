@@ -1,0 +1,25 @@
+@import 'variables';
+
+@mixin bgOverlay($color1,$color2) {
+    &::before{
+        content: '';
+        position: absolute;
+        top: -10%;
+        left: -15%;
+        bottom: -10%;
+        right: 0;
+        background-color: linear-gradient(45deg $color1,$color2);
+        border-radius: 10px;
+    }
+}
+
+@mixin textGradient(){
+    background-color: $BGDarker;
+    background-image: linear-gradient($BGLighter,$BGDarker);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+}

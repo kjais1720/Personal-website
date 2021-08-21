@@ -1,0 +1,195 @@
+@import 'variables';
+@import 'mixins';
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat+Alternates:wght@300&family=Sacramento&display=swap");
+
+*,*::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body{
+    background-color: $BGLighter;
+}
+
+h1{
+    text-align: center;
+    margin-top: 9.8rem auto 0;
+    font-size: 5rem;
+    font-family: 'Sacramento', cursive, sans-serif;
+    color: $textPrimary;
+}
+h2{
+    font-weight: normal ;
+    font-family: 'Merriweather', serif;
+    color: $textSecondary;
+}
+
+hr{
+    margin:1.25rem auto;
+    border-width: 5px;
+    border-color: $textGray;
+    width: 20%;
+    border-style:dotted none none;
+}
+::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset grey;
+    background: rgb(188, 231, 231); 
+    border-radius: 2cm;
+    
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #7eca9c; 
+border-radius:2cm;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #3e9962; 
+}
+
+
+
+header{
+    min-height: 80vh;
+    position: relative;
+    padding: $paddingVer $paddingVer 0;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        
+        #logo{
+            position: relative;
+            bottom: 10px;
+            img{
+                border-radius: 100%;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        
+        ul{
+            
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            li a{
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: $textPrimary;
+            }
+        }
+    }
+
+    #cloud{
+        position: absolute;
+        width: 20%;
+
+        &:nth-child(1){
+            right: 10%;
+            top: 5%;
+        }
+        &:nth-child(2){
+            left: 10%;
+            top: 7%;
+        }
+    }
+
+    .hero{
+        margin: $paddingVer $paddingVer 0 ;
+        padding: $paddingVer $paddingHor 0;
+
+        #title{
+            p{
+                text-align: center;
+                line-height: 2;
+                color: $textGray;
+                font-size: 1.5rem;
+            }
+
+            .animatedText span{
+                opacity: 0;
+                transform: scale(0);
+                transition: all ease 1s;
+                // animation: typewriter ease 3s 1;
+            }
+            .animatedText.active span{
+                opacity: 1;
+                transform: scale(1);
+                transition: all ease 1s;
+
+            }
+        }
+        .hero-img{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+
+    }
+
+}
+
+// Middle Section
+#middle-container{
+    padding: $paddingVer $paddingHor;
+    background-color: $White;
+
+    #profile{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    #profile p{
+        width: 70%;
+        color: $textGray;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        letter-spacing: 0.8px;
+    }
+    
+    #profilePic{
+        
+        border-radius: 100%;
+        background-color: $BGLighter;
+        height: 12.5rem;
+        width: 12.5rem;
+    }
+}
+
+@keyframes typewriter {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    95%{
+        opacity: 1;
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+

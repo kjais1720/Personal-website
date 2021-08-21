@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat+Alternates:wght@300&family=Sacramento&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+  background-color: #b9f7f7;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 9.8rem auto 0;
+  font-size: 5rem;
+  font-family: 'Sacramento', cursive, sans-serif;
+  color: #008080;
+}
+
+h2 {
+  font-weight: normal;
+  font-family: 'Merriweather', serif;
+  color: #66bfbf;
+}
+
+hr {
+  margin: 1.25rem auto;
+  border-width: 5px;
+  border-color: #808080;
+  width: 20%;
+  border-style: dotted none none;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset grey;
+          box-shadow: inset grey;
+  background: #bce7e7;
+  border-radius: 2cm;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7eca9c;
+  border-radius: 2cm;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3e9962;
+}
+
+header {
+  min-height: 80vh;
+  position: relative;
+  padding: 5vh 5vh 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav #logo {
+  position: relative;
+  bottom: 10px;
+}
+
+header nav #logo img {
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #008080;
+}
+
+header #cloud {
+  position: absolute;
+  width: 20%;
+}
+
+header #cloud:nth-child(1) {
+  right: 10%;
+  top: 5%;
+}
+
+header #cloud:nth-child(2) {
+  left: 10%;
+  top: 7%;
+}
+
+header .hero {
+  margin: 5vh 5vh 0;
+  padding: 5vh 15vw 0;
+}
+
+header .hero #title p {
+  text-align: center;
+  line-height: 2;
+  color: #808080;
+  font-size: 1.5rem;
+}
+
+header .hero #title .animatedText span {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+header .hero #title .animatedText.active span {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+header .hero .hero-img {
+  width: 100%;
+}
+
+header .hero .hero-img img {
+  width: 100%;
+}
+
+#middle-container {
+  padding: 5vh 15vw;
+  background-color: #fff;
+}
+
+#middle-container #profile {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+#middle-container #profile p {
+  width: 70%;
+  color: #808080;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+
+#middle-container #profilePic {
+  border-radius: 100%;
+  background-color: #b9f7f7;
+  height: 12.5rem;
+  width: 12.5rem;
+}
+
+@-webkit-keyframes typewriter {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
