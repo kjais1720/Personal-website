@@ -1,0 +1,29 @@
+$desktop-size: 1024px;
+
+/* Media Queries */ 
+$media_queries : (
+    'mobile'    : "only screen and (max-width: 650px)",
+    'tablet'    : "only screen and (min-width: 650px) and (max-width: #{$desktop-size})",
+    'desktop'   : "only screen and (min-width: (#{$desktop-size} + 1))",
+    'retina2'   : "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)",
+    'retina3'   : "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)",
+    'landscape' : "screen and (orientation:landscape) ",    
+    'portrait'  : "screen and (orientation:portrait) "
+);
+
+@mixin mediaQ($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}

@@ -4,60 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="KJ-logo.jpg">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="assets/images/KJ-logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../hamburger.css">
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <title>Krituraj Anand</title>
 </head>
-<body onload="toggle();">
+<body onload = "toggle();">
   <header>
     <nav>
-      <div id="logo">
-        <a href="#"><img src="KJ-logo.jpg" alt="logo"></a>
+      <div class="logo">
+        <a href="#"><img load='lazy' src="assets/images/KJ-logo.png" alt="logo"></a>
       </div>
       <ul>
         <li>
-          <span><strong><a id="aboutlink" href="#profile">About</a></strong></span>
+          <a id="#profile" href="#profile">About</a>
+        </li>
+        <li><a href="#skills">Skills</a></li>
+        <li>
+          <a href="#works">Works</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
         </li>
-        <li>
-          <a href="#works">Works</a>
-        </li>
       </ul>
+      <button class="hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>  
     </nav>
     
     <div class="hero">
-      <img id="cloud" src="images/cloud.png" alt="clouds">
-      <img id="cloud" src="images/cloud.png" alt="clouds">
+      <img load='lazy' class="cloud" src="assets/images/cloud.png" alt="clouds">
+      <img load='lazy' class="cloud" src="assets/images/cloud.png" alt="clouds">
       <div id="title">
         <h1 class="animatedText">
             I'm Krituraj.
         </h1>
         <p class="animatedText">A Programmer</p>
       </div>
-      <div class="hero-img"><img id="mountain" src="images/mountain.png" alt="mountains"></div>
+      <div class="hero-img"><img load='lazy' id="mountain" src="assets/images/mountain.png" alt="mountains"></div>
     </div>
   </header>
-  <hr>
 
-  <div id="middle-container">
-      <div id="profile">
-        <img id="profilePic" src="images/Krituraj_Anand.png" alt="Krituraj Anand Profile Picture">
-        <h2>I am..</h2>
-        
-        <p>a <em><strong>Full-stack developer</strong> & a <strong>Data analyst</strong></em></p>
-        <p style="text-align: justify;">I am a full stack developer and a data analyst based in New Delhi. I have a passion for web design & Python and love to create for web and mobile devices.
+  <main>
+      <section id="profile">
+        <img load='lazy' id="profilePic" src="assets/images/Krituraj_Anand.png" alt="Krituraj Anand Profile Picture">
+        <h2 data-scroll="">I am..</h2>
+        <p data-scroll>a <em><strong>Full-stack developer</strong></em></p>
+        <p data-scroll style="text-align: justify;">I am a Web developer based in New Delhi. I have a passion for web design & Python and love to create for web and mobile devices.
         </p>        
       
-      </div>
+      </section>
       <hr>
-      <div class="skills">
-        <h2>My Skills.</h2>
-        <div class="skill-row">
-          <div class="img-col left-col"><img class="python" src="https://i.giphy.com/media/ZvU5gJBGbAwZW49M3f/giphy.webp" alt="Python-gif"></div>
+      <section id="skills" class="skills">
+        <div class="section-heading">
+          <h2 data-scroll>My Repertoire</h2>
+        </div>
+        <!-- <div class="skill-row">
+          <div class="img-col left-col"><img load='lazy' class="python" src="assets/https://i.giphy.com/media/ZvU5gJBGbAwZW49M3f/giphy.webp" alt="Python-gif"></div>
           <div class="text-col righ-col">
             <h3>Python Programming</h3>
             <p>After hundreds of hours of learning and building dozens of projects with python, i can safely say that I know a thing or two about Python.</p>
@@ -69,94 +77,149 @@
             <p>I am a Full-stack web developer with specialisation in HTML, CSS, Javascript & Bootstrap, Node.js, Python, React and MongoDB. I love designing aesthetically pleasing, functional and detail-oriented web products. I have built quite a few fully interactive websites and web applications.</p>
           </div>
           <div class="img-col right-col">
-            <img class="Web-Developer" src="https://i.giphy.com/media/d9IfL7seBexHLct75B/giphy.webp" alt="Web-dev-gif">
+            <img load='lazy' class="Web-Developer" src="assets/https://i.giphy.com/media/d9IfL7seBexHLct75B/giphy.webp" alt="Web-dev-gif">
           </div>
-        </div>
-      </div>
-
-      <div class="works">
-        <div class="card">
-          <h2>01</h2>
-          <img src="../../Web Development/CSS_Mysite/images/calc.jpg" alt="">
-          <div class='card-text'>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
-            <div class="buttons">
-              <button class="live-link"></button>
-              <button class="github"></button>
+        </div> -->
+        <div class="skill-table">
+          <ul>         
+            <div class="left-col">
+              <li>
+                <img load='lazy' src="assets/images/font icons/html.png" alt="">
+                <p>HTML</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/CSS-Logo.png" alt="">
+                <p>CSS</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/JavaScript-logo.png" alt="">
+                <p>Javascript</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/python.png" alt="">
+                <p>Python</p>
+              </li>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>01</h2>
-          <img src="../../Web Development/CSS_Mysite/images/fylo.jpg" alt="">
-          <div class='card-text'>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
-            <div class="buttons">
-              <button class="live-link"></button>
-              <button class="github"></button>
+            <div class="right-col">
+              <li>
+                <img load='lazy' src="assets/images/font icons/icons8-react.svg" alt="">
+                <p>ReactJS</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/nodejs.png" alt="">
+                <p>NodeJS</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/icons8-mongodb.svg" alt="">
+                <p>mongoDB</p>
+              </li>
+              <li>
+                <img load='lazy' src="assets/images/font icons/bootstrap.png" alt="">
+                <p>Bootstrap</p>
+              </li>
             </div>
-          </div>
+          </ul>
         </div>
-        <div class="card">
-          <h2>01</h2>
-          <img src="../../Web Development/CSS_Mysite/images/Personal.jpg" alt="">
-          <div class='card-text'>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
-            <div class="buttons">
-              <button class="live-link"></button>
-              <button class="github"></button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>01</h2>
-          <img src="../../Web Development/CSS_Mysite/images/beep-boop.jpg" alt="">
-          <div class='card-text'>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
-            <div class="buttons">
-              <button class="live-link"></button>
-              <button class="github"></button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>01</h2>
-          <img src="../../Web Development/CSS_Mysite/images/room.jpg" alt="">
-          <div class='card-text'>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
-            <div class="buttons">
-              <button class="live-link"></button>
-              <button class="github"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-  </div>
-  <div class="bottom-container">
+      </section>
       <hr>
 
-      <div id="contact" class="contact-me">
-        <h2>At your service</h2>
-        <h3>I am currently available for freelance work.</h3>
-        <p>If you have a project that you want to get started, think 
-              you need my help with something or just fancy saying hey,
-              then get in touch.</p>
-      </div>
-      <div id="button">
-      <a class="btn" href="mailto:jaiswalkrituraj20@email.com"><i class="fa fa-envelope"></i>CONTACT ME</a>
-      </div>
-      <div id="button">
-        <a class="btn" href="krituraj-resume.pdf" download="Krituraj Anand Resume"><i class="fa fa-file"></i>Resume</a>
-      </div>
-      <footer>
-        <a class="footer-link" href="https://www.linkedin.com/in/krituraj-anand/" target="blank"><b>LinkedIn</b></a>
-        <a class="footer-link" href="https://kjais1720.github.io/Personal-site/" target="_blank"><b>Website</b></a>
-        <a class="footer-link" href="https://github.com/kjais1720" target="_blank"><b>Github</b></a>
-        <p id="copyright">© 2021 Krituraj Anand.</p>
-      </footer>
-    </div>  
+      <section id="works" class="works">
+        <div class="section-heading">
+          <h2 data-scroll>Proof of Work</h2>
+        </div>
+        <div class="card">
+          <div class="card-img" data-scroll ><img load='lazy' src="assets/images/calc.png" alt=""></div>
+          <div class='card-text'>
+            <h2>Calculator</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
+            <div class="buttons">
+              <button class="live-link"><i class="fas fa-external-link-alt"></i></button>
+              <button class="github"><i class="fab fa-github"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" data-scroll ><img load='lazy' src="assets/images/fylo.jpg" alt=""></div>
+          <div class='card-text'>
+            <h2>Fylo Landing Page</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
+            <div class="buttons">
+              <button class="live-link"><i class="fas fa-external-link-alt"></i></button>
+              <button class="github"><i class="fab fa-github"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" data-scroll ><img load='lazy' src="assets/images/Personal.jpg" alt=""></div>
+          <div class='card-text'>
+            <h2>Portfolio</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
+            <div class="buttons">
+              <button class="live-link"><i class="fas fa-external-link-alt"></i></button>
+              <button class="github"><i class="fab fa-github"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" data-scroll ><img load='lazy' src="assets/images/beep-boop.jpg" alt=""></div>
+          <div class='card-text'>
+            <h2>Beep Boop Game</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
+            <div class="buttons">
+              <button class="live-link"><i class="fas fa-external-link-alt"></i></button>
+              <button class="github"><i class="fab fa-github"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" data-scroll ><img load='lazy' src="assets/images/room.jpg" alt=""></div>
+          <div class='card-text'>
+            <h2>Room Landing Page</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, repellendus minima debitis nemo quod veniam voluptate explicabo, cum.</p>
+            <div class="buttons">
+              <button class="live-link"><i class="fas fa-external-link-alt"></i></button>
+              <button class="github"><i class="fab fa-github"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section class="contact-wrapper">
+        <section id="contact" class="contact">
+          <div class="section-heading">
+            <h2 data-scroll>At your service</h2>
+          </div>
+          <h3>I am currently available for freelance work.</h3>
+          <p>If you have a project that you want to get started, think
+                you need my help with something or just fancy saying hey,
+                then get in touch.</p>
+          <div class="cta">
+            <a class="btn" href="mailto:jaiswalkrituraj20@email.com"><i class="fa fa-envelope"></i> CONTACT ME</a>
+            <a class="btn" href="assets/krituraj-resume.pdf" download="Krituraj Anand Resume"><i class="fa fa-file"></i> RESUME</a>
+          </div>
+        </section>
+      </section>
+  </main>
+  <footer>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/krituraj-anand/" target="blank"><b>LinkedIn</b></a>
+        <a href="https://kjais1720.github.io/Personal-site/" target="_blank"><b>Website</b></a>
+        <a href="https://github.com/kjais1720" target="_blank"><b>Github</b></a>
+    </div>
+    <div class="footer-logo logo">
+      <img src="assets/images/KJ-logo.png" alt="">
+    </div>
+    <p id="copyright">©2021 Krituraj Anand</p>
+  </footer>
 
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="index.js"></script>
+    <Script>
+      ScrollOut({
+        // once:true,
+        targets:['[data-scroll]','.card h2','.card::before'],
+        threshold:0.4
+      });
+    </Script>
 </body>
 </html>

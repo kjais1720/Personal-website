@@ -1,15 +1,21 @@
 @import 'variables';
-
+@import 'mediaQ';
 @mixin bgOverlay($color1,$color2) {
     &::before{
         content: '';
         position: absolute;
         top: -10%;
-        left: -15%;
+        left: -10%;
         bottom: -10%;
-        right: 0;
-        background-color: linear-gradient(45deg $color1,$color2);
+        right: 10%;
+        background-image: linear-gradient(45deg, $color1,$color2);
         border-radius: 10px;
+
+        @include mediaQ(mobile){
+            left: 10%;
+            right: 10%;
+            
+        }
     }
 }
 
@@ -22,4 +28,28 @@
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
 
+}
+
+@mixin overline-from-center {
+/* Overline From Center */
+    & {
+        transform: perspective(1px) translateZ(0);
+        position: relative;
+        overflow: hidden;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: $gradientDarker;
+        height: 2px;
+        transition: all 0.3s ease-out;
+    }
+    &:hover:before, .hvr-overline-from-center:focus:before, .hvr-overline-from-center:active:before {
+        left: 0;
+        right: 0;
+    }
 }
