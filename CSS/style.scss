@@ -48,6 +48,15 @@ p{
     font-size: 1.5rem;
 }
 
+a{
+    text-decoration: none;
+    color: $textPrimary;
+    font-size: 1.2rem;
+    &:hover{
+        color: $gradientDarker;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 0.9rem;
   }
@@ -75,6 +84,7 @@ background: linear-gradient($gradientLighter, $gradientDarker);
 
 section{
     padding: $paddingVer $paddingHor;
+    margin: $paddingVer;
 
     .section-heading{
         border-left: solid 2px $textPrimary;
@@ -82,7 +92,7 @@ section{
         margin:auto;
         overflow: hidden;
         padding: 10px 10px;
-        &>h2{
+        h2{
             font-size: 3rem;
             font-weight: 800;
             font-family: $fontH1;
@@ -103,11 +113,18 @@ section{
 
     @include mediaQ(mobile){
         padding: 5vw;
+        margin: 10vh 0 0;
+        &:first-child{
+            margin-top: 0;
+        }
+        .section-heading h2{
+            font-size: 2.5rem;
+        }
     }
 }
 
 .logo{
-
+    text-align: center;
     img{
         width: 3rem;
         height: 3rem;
@@ -117,7 +134,7 @@ section{
 
 
 header{
-    min-height: 80vh;
+    // min-height: 80vh;
     position: relative;
     padding: $paddingVer $paddingVer 0;
     nav{
@@ -171,11 +188,11 @@ header{
     
             &:nth-child(1){
                 right: 10%;
-                top: 5%;
+                top: 22%;
             }
             &:nth-child(2){
                 left: 10%;
-                top: 7%;
+                top: 27%;
             }
         }
 
@@ -214,6 +231,9 @@ header{
         z-index: 100;
         &:hover {
             opacity: 0.7;
+        }
+        &:focus{
+            outline: none;
         }
         
         .hamburger-box {
@@ -283,10 +303,10 @@ header{
         }
         #title{
             h1{
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             p{
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
         }
         .hamburger{
@@ -298,6 +318,11 @@ header{
                 right: 0;
 
             }
+        }
+
+        .hero{
+            padding: 0;
+            margin: 0;
         }
 
     }
@@ -393,7 +418,6 @@ main{
             .card-img{
                 position: relative;
                 width: 100%;
-                // overflow: hidden;
                 img{
                     width: 100%;
                     object-fit: cover;
@@ -455,13 +479,15 @@ main{
                     font-family: 'Merriweather',sans-serif;
                 }
                 p{
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     width: 90%;
                     text-align: left;
                     color: $textGray;
                     line-height: 1.5;
                 }
                 .buttons{
+                    display: flex;
+                    gap: 10px;
                     button{
                         border: none;
                         font-size: 1.5rem;
@@ -481,16 +507,39 @@ main{
             }
         }
 
+        .github{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+
         @include mediaQ(mobile){
             padding:10vw;
 
             .card{
                 .card-text *{
                     text-align: center;
+
                 }
-                &>h2{
+                .card-img::after{
+                    // display: none;
+                    text-align: center;
                     font-size: 8rem;
                     right: -13%;
+                }
+                .card-text{
+                    h2{
+                        font-size: 1.5rem;
+                        text-align: center;
+                    }
+                    p{
+                        margin: auto;
+                        font-size: 1rem;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -499,8 +548,8 @@ main{
 
     .contact-wrapper{
         min-height: 50vh;
+        margin: 0;
         background-image: linear-gradient(to bottom, #e3fffd 50%, $BGLighter 50%);
-        // background-color: hsla(197, 87%, 49%,0.4);
 
         .contact{
             background-color: $White;
@@ -514,10 +563,10 @@ main{
             }
             h3{
                 color: $textPrimary;
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             p{
-                font-size: 1.2rem;
+                font-size: 1rem;
                 width: 100%;
             }
 
@@ -539,10 +588,13 @@ main{
 
             @include mediaQ(mobile){
                 .cta{
-                    padding: 0 $paddingHor;
+                    padding: 0;
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+
+                    a{
+                      padding: 5px 20px;  
+                    }
                 }
             }
         }
@@ -583,6 +635,12 @@ footer{
         transform: translateX(-50%);
         font-size: 1rem;
         
+    }
+
+    @include mediaQ(mobile){
+        a{
+            font-size: 1.2rem;
+        }
     }
 }
 

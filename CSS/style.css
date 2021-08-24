@@ -50,6 +50,16 @@ p {
   font-size: 1.5rem;
 }
 
+a {
+  text-decoration: none;
+  color: #008080;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  color: #11aeeb;
+}
+
 ::-webkit-scrollbar {
   width: 0.9rem;
 }
@@ -77,6 +87,7 @@ p {
 
 section {
   padding: 5vh 15vw;
+  margin: 5vh;
 }
 
 section .section-heading {
@@ -89,7 +100,7 @@ section .section-heading {
   padding: 10px 10px;
 }
 
-section .section-heading > h2 {
+section .section-heading h2 {
   font-size: 3rem;
   font-weight: 800;
   font-family: "Sacramento", cursive, san-serif;
@@ -99,13 +110,13 @@ section .section-heading > h2 {
   transition: all ease 1s;
 }
 
-section .section-heading > h2[data-scroll='in'] {
+section .section-heading h2[data-scroll='in'] {
   opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-section .section-heading > h2[data-scroll='out'] {
+section .section-heading h2[data-scroll='out'] {
   opacity: 0;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -114,7 +125,18 @@ section .section-heading > h2[data-scroll='out'] {
 @media only screen and (max-width: 650px) {
   section {
     padding: 5vw;
+    margin: 10vh 0 0;
   }
+  section:first-child {
+    margin-top: 0;
+  }
+  section .section-heading h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.logo {
+  text-align: center;
 }
 
 .logo img {
@@ -125,7 +147,6 @@ section .section-heading > h2[data-scroll='out'] {
 }
 
 header {
-  min-height: 80vh;
   position: relative;
   padding: 5vh 5vh 0;
 }
@@ -214,12 +235,12 @@ header .hero .cloud {
 
 header .hero .cloud:nth-child(1) {
   right: 10%;
-  top: 5%;
+  top: 22%;
 }
 
 header .hero .cloud:nth-child(2) {
   left: 10%;
-  top: 7%;
+  top: 27%;
 }
 
 header .hero #title .animatedText span {
@@ -259,6 +280,10 @@ header .hamburger {
 
 header .hamburger:hover {
   opacity: 0.7;
+}
+
+header .hamburger:focus {
+  outline: none;
 }
 
 header .hamburger .hamburger-box {
@@ -355,16 +380,20 @@ header .hamburger.is-active .hamburger-inner::after {
     color: #fff;
   }
   header #title h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   header #title p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   header .hamburger {
     display: inline-block;
   }
   header nav.active ul {
     right: 0;
+  }
+  header .hero {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -568,11 +597,18 @@ main .works .card .card-text h2 {
 }
 
 main .works .card .card-text p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 90%;
   text-align: left;
   color: #808080;
   line-height: 1.5;
+}
+
+main .works .card .card-text .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
 }
 
 main .works .card .card-text .buttons button {
@@ -595,6 +631,19 @@ main .works .card .card-text .buttons button:hover {
           transform: scale(1.1);
 }
 
+main .works .github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media only screen and (max-width: 650px) {
   main .works {
     padding: 10vw;
@@ -602,14 +651,25 @@ main .works .card .card-text .buttons button:hover {
   main .works .card .card-text * {
     text-align: center;
   }
-  main .works .card > h2 {
+  main .works .card .card-img::after {
+    text-align: center;
     font-size: 8rem;
     right: -13%;
+  }
+  main .works .card .card-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  main .works .card .card-text p {
+    margin: auto;
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
 main .contact-wrapper {
   min-height: 50vh;
+  margin: 0;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #e3fffd), color-stop(50%, #b9f7f7));
   background-image: linear-gradient(to bottom, #e3fffd 50%, #b9f7f7 50%);
 }
@@ -629,11 +689,11 @@ main .contact-wrapper .contact * {
 
 main .contact-wrapper .contact h3 {
   color: #008080;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 main .contact-wrapper .contact p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 100%;
 }
 
@@ -653,7 +713,7 @@ main .contact-wrapper .contact .cta a:hover {
 
 @media only screen and (max-width: 650px) {
   main .contact-wrapper .contact .cta {
-    padding: 0 15vw;
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -661,7 +721,9 @@ main .contact-wrapper .contact .cta a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 20px;
+  }
+  main .contact-wrapper .contact .cta a {
+    padding: 5px 20px;
   }
 }
 
@@ -730,6 +792,12 @@ footer p {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 650px) {
+  footer a {
+    font-size: 1.2rem;
+  }
 }
 
 @-webkit-keyframes typewriter {
