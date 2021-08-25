@@ -54,6 +54,8 @@ a {
   text-decoration: none;
   color: #008080;
   font-size: 1.2rem;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 a:hover {
@@ -125,7 +127,7 @@ section .section-heading h2[data-scroll='out'] {
 @media only screen and (max-width: 650px) {
   section {
     padding: 5vw;
-    margin: 10vh 0 0;
+    margin: 5vh 0 0;
   }
   section:first-child {
     margin-top: 0;
@@ -235,12 +237,12 @@ header .hero .cloud {
 
 header .hero .cloud:nth-child(1) {
   right: 10%;
-  top: 22%;
+  top: 18%;
 }
 
 header .hero .cloud:nth-child(2) {
   left: 10%;
-  top: 27%;
+  top: 40%;
 }
 
 header .hero #title .animatedText span {
@@ -358,6 +360,11 @@ header .hamburger.is-active .hamburger-inner::after {
 }
 
 @media only screen and (max-width: 650px) {
+  header {
+    padding: 10vh 0 0;
+    min-height: 70vh;
+    display: -webkit-box;
+  }
   header nav ul {
     padding: 10% 0;
     position: fixed;
@@ -380,7 +387,7 @@ header .hamburger.is-active .hamburger-inner::after {
     color: #fff;
   }
   header #title h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   header #title p {
     font-size: 1rem;
@@ -392,8 +399,18 @@ header .hamburger.is-active .hamburger-inner::after {
     right: 0;
   }
   header .hero {
-    padding: 0;
+    padding: 10vh 0 0;
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -588,6 +605,10 @@ main .works .card:nth-child(6) .card-img::after {
   content: "05";
 }
 
+main .works .card .card-text > * {
+  margin-top: 20px;
+}
+
 main .works .card .card-text h2 {
   margin-top: 10%;
   font-size: 2rem;
@@ -613,10 +634,14 @@ main .works .card .card-text .buttons {
 
 main .works .card .card-text .buttons button {
   border: none;
-  font-size: 1.5rem;
+  outline: none;
+}
+
+main .works .card .card-text .buttons button a {
   color: #11aeeb;
   border-radius: 100%;
   padding: 10px;
+  font-size: 1.5rem;
   background-color: rgba(16, 172, 234, 0.2);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -625,13 +650,13 @@ main .works .card .card-text .buttons button {
   transition: all ease 0.5s;
 }
 
-main .works .card .card-text .buttons button:hover {
+main .works .card .card-text .buttons button a:hover {
   background-color: rgba(16, 172, 234, 0.4);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-main .works .github {
+main .works .more {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -646,7 +671,10 @@ main .works .github {
 
 @media only screen and (max-width: 650px) {
   main .works {
-    padding: 10vw;
+    padding: 5vw;
+  }
+  main .works .card {
+    margin: 30% 0;
   }
   main .works .card .card-text * {
     text-align: center;
@@ -654,16 +682,22 @@ main .works .github {
   main .works .card .card-img::after {
     text-align: center;
     font-size: 8rem;
-    right: -13%;
+    right: 50%;
+    top: -60%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
   main .works .card .card-text h2 {
     font-size: 1.5rem;
-    text-align: center;
   }
   main .works .card .card-text p {
-    margin: auto;
+    margin: 20px 0;
     font-size: 1rem;
-    text-align: center;
+  }
+  main .works .card .buttons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 

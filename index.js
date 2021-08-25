@@ -39,11 +39,6 @@ animatedText.forEach(text =>{
             .join('');
     })
 
-// setTimeout(() => {
-//     animatedText.forEach(e=>{
-//         e.classList.toggle('active');
-//     })
-// }, 1000);
 
 function toggle(){
     animatedText.forEach(e=>{

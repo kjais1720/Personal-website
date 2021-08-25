@@ -52,6 +52,7 @@ a{
     text-decoration: none;
     color: $textPrimary;
     font-size: 1.2rem;
+    transition: all ease 0.3s;
     &:hover{
         color: $gradientDarker;
     }
@@ -113,7 +114,7 @@ section{
 
     @include mediaQ(mobile){
         padding: 5vw;
-        margin: 10vh 0 0;
+        margin: 5vh 0 0;
         &:first-child{
             margin-top: 0;
         }
@@ -188,11 +189,11 @@ header{
     
             &:nth-child(1){
                 right: 10%;
-                top: 22%;
+                top: 18%;
             }
             &:nth-child(2){
                 left: 10%;
-                top: 27%;
+                top: 40%;
             }
         }
 
@@ -284,6 +285,9 @@ header{
     }
 
     @include mediaQ(mobile){
+        padding: 10vh 0 0;
+        min-height: 70vh;
+        display: -webkit-box;
         nav ul{
             padding: 10% 0;
             position: fixed;
@@ -303,7 +307,7 @@ header{
         }
         #title{
             h1{
-                font-size: 2rem;
+                font-size: 3rem;
             }
             p{
                 font-size: 1rem;
@@ -321,8 +325,11 @@ header{
         }
 
         .hero{
-            padding: 0;
+            padding: 10vh 0 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
     }
@@ -471,6 +478,9 @@ main{
                 }
             }
             .card-text{
+                >*{
+                    margin-top: 20px;
+                }
                 h2{
                     margin-top: 10%;
                     font-size: 2rem;
@@ -489,59 +499,68 @@ main{
                     display: flex;
                     gap: 10px;
                     button{
+
                         border: none;
-                        font-size: 1.5rem;
-                        color: $gradientDarker;
-                        border-radius: 100%;
-                        padding: 10px;
-                        background-color: hsla(197, 87%, 49%,0.2);
-                        backdrop-filter: blur(10px);
-                        cursor: pointer;
-                        transition: all ease 0.5s;
-                        &:hover{
-                            background-color: hsla(197, 87%, 49%,0.4);
-                            transform: scale(1.1);
+                        outline: none;
+                        a{  
+                            color: $gradientDarker;
+                            border-radius: 100%;
+                            padding: 10px;
+                            font-size: 1.5rem;
+                            background-color: hsla(197, 87%, 49%,0.2);
+                            backdrop-filter: blur(10px);
+                            cursor: pointer;
+                            transition: all ease 0.5s;
+                            &:hover{
+                                background-color: hsla(197, 87%, 49%,0.4);
+                                transform: scale(1.1);
+                            }
                         }
                     }
                 }
             }
         }
 
-        .github{
+        .more{
             display: flex;
             gap: 10px;
             align-items: center;
             justify-content: center;
-
+ 
             
         }
 
         @include mediaQ(mobile){
-            padding:10vw;
+            padding:5vw;
 
             .card{
+                margin: 30% 0;
                 .card-text *{
                     text-align: center;
 
                 }
                 .card-img::after{
-                    // display: none;
                     text-align: center;
                     font-size: 8rem;
-                    right: -13%;
+                    right: 50%;
+                    top: -60%;
+                    transform: translateX(50%);
                 }
                 .card-text{
                     h2{
                         font-size: 1.5rem;
-                        text-align: center;
                     }
                     p{
-                        margin: auto;
+                        margin: 20px 0;
                         font-size: 1rem;
-                        text-align: center;
                     }
                 }
+
+                .buttons{
+                    justify-content: flex-end;
+                }
             }
+
         }
 
     }
