@@ -693,6 +693,7 @@ main .works .more {
   main .works .card .card-text p {
     margin: 20px 0;
     font-size: 1rem;
+    width: 100%;
   }
   main .works .card .buttons {
     -webkit-box-pack: end;
