@@ -41,8 +41,31 @@ animatedText.forEach(text =>{
 
 
 function toggle(){
-    animatedText.forEach(e=>{
-        e.classList.toggle('active');
-    })
+    setTimeout(()=>{
+        document.body.classList.add('loaded');
+        setTimeout(()=>{
+            animatedText.forEach(e=>{
+                e.classList.toggle('active');
+            })
+        },400)
+    },2000)
 }
 
+var paragraphExpand;
+var paraSelector;
+var expandButton;
+var expandButtonSelector;
+function expandParagraph(parent){
+    paraSelector = '.card:nth-child('+parent+') .card-text p'
+    expandButtonSelector = '.card:nth-child('+parent+') .card-text .read-more';
+
+    expandButton = document.querySelector(expandButtonSelector);
+    paragraphExpand = document.querySelector(paraSelector);
+    console.log(paragraphExpand);
+    paragraphExpand.classList.toggle('expand');
+    if(expandButton.innerText === '...read more'){
+        expandButton.innerText = 'read less';
+    } else{
+        expandButton.innerText = '...read more';
+    }
+}

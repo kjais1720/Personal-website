@@ -19,6 +19,42 @@ html {
 
 body {
   background-color: #b9f7f7;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > * {
+  display: none;
+}
+
+body .loader {
+  display: block;
+}
+
+body.loaded {
+  display: block;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+
+body.loaded > * {
+  display: block;
+}
+
+body.loaded .loader {
+  display: none;
 }
 
 h1 {
@@ -618,11 +654,46 @@ main .works .card .card-text h2 {
 }
 
 main .works .card .card-text p {
+  position: relative;
   font-size: 1.2rem;
   width: 90%;
   text-align: left;
   color: #808080;
-  line-height: 1.5;
+  line-height: 1.4rem;
+  height: 4.2rem;
+  overflow: hidden;
+  -webkit-transition: height ease 1s;
+  transition: height ease 1s;
+}
+
+main .works .card .card-text p::after {
+  content: '';
+  position: absolute;
+  z-index: 100;
+  inset: 75% 0 0 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
+  background-image: linear-gradient(to bottom, transparent, #fff);
+}
+
+main .works .card .card-text p.expand {
+  height: 7.7rem;
+}
+
+main .works .card .card-text p.expand::after {
+  display: none;
+}
+
+main .works .card .card-text > button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #008080;
+}
+
+main .works .card .card-text > button:nth-of-type(2) {
+  display: none;
 }
 
 main .works .card .card-text .buttons {
@@ -730,6 +801,7 @@ main .contact-wrapper .contact h3 {
 main .contact-wrapper .contact p {
   font-size: 1rem;
   width: 100%;
+  padding: 0 10%;
 }
 
 main .contact-wrapper .contact .cta a {
@@ -759,6 +831,9 @@ main .contact-wrapper .contact .cta a:hover {
   }
   main .contact-wrapper .contact .cta a {
     padding: 5px 20px;
+  }
+  main .contact-wrapper .contact p {
+    padding: 0;
   }
 }
 
