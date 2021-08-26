@@ -303,6 +303,8 @@ header .hero .hero-img {
 
 header .hero .hero-img img {
   width: 100%;
+  position: relative;
+  bottom: -34px;
 }
 
 header .hamburger {
@@ -399,7 +401,6 @@ header .hamburger.is-active .hamburger-inner::after {
   header {
     padding: 10vh 0 0;
     min-height: 70vh;
-    display: -webkit-box;
   }
   header nav ul {
     padding: 10% 0;
@@ -437,6 +438,8 @@ header .hamburger.is-active .hamburger-inner::after {
   header .hero {
     padding: 10vh 0 0;
     margin: 0;
+    position: absolute;
+    bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -447,6 +450,9 @@ header .hamburger.is-active .hamburger-inner::after {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  header .hero .hero-img img {
+    bottom: 0;
   }
 }
 
@@ -678,13 +684,13 @@ main .works .card .card-text p::after {
   content: '';
   position: absolute;
   z-index: 100;
-  inset: 75% 0 0 0;
+  inset: 65% 0 0 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
   background-image: linear-gradient(to bottom, transparent, #fff);
 }
 
 main .works .card .card-text p.expand {
-  height: 7.7rem;
+  height: 8.4rem;
 }
 
 main .works .card .card-text p.expand::after {

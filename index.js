@@ -48,7 +48,7 @@ function toggle(){
                 e.classList.toggle('active');
             })
         },400);
-    },2000);
+    },2500);
 };
 
 var paragraphExpand;
