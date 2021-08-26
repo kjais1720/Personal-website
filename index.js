@@ -39,7 +39,7 @@ animatedText.forEach(text =>{
             .join('');
     })
 
-
+window.onload=toggle;
 function toggle(){
     setTimeout(()=>{
         document.body.classList.add('loaded');
@@ -47,9 +47,9 @@ function toggle(){
             animatedText.forEach(e=>{
                 e.classList.toggle('active');
             })
-        },400)
-    },2000)
-}
+        },400);
+    },2000);
+};
 
 var paragraphExpand;
 var paraSelector;
@@ -69,3 +69,10 @@ function expandParagraph(parent){
         expandButton.innerText = '...read more';
     }
 }
+
+
+ScrollOut({
+// once:true,
+// targets:['[data-scroll]','.card h2','.card::before'],
+threshold:0.4
+});

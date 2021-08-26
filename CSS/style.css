@@ -539,6 +539,10 @@ main .works {
 }
 
 main .works .card {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 15% auto;
   position: relative;
 }
@@ -641,6 +645,10 @@ main .works .card:nth-child(6) .card-img::after {
   content: "05";
 }
 
+main .works .card .card-text {
+  padding: 30px;
+}
+
 main .works .card .card-text > * {
   margin-top: 20px;
 }
@@ -685,6 +693,7 @@ main .works .card .card-text p.expand::after {
 
 main .works .card .card-text > button {
   border: none;
+  outline: none;
   cursor: pointer;
   background-color: transparent;
   font-size: 1.2rem;

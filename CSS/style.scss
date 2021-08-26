@@ -437,6 +437,9 @@ main{
         padding: $paddingVer 20vw;
         
         .card{
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
             margin: 15% auto;
             position: relative;
 
@@ -501,6 +504,7 @@ main{
                 }
             }
             .card-text{
+                padding: 30px;
                 >*{
                     margin-top: 20px;
                 }
@@ -540,6 +544,7 @@ main{
                 }
                 >button{
                     border: none;
+                    outline: none;
                     cursor: pointer;
                     background-color: transparent;
                     font-size: 1.2rem;
