@@ -48,31 +48,71 @@ function toggle(){
                 e.classList.toggle('active');
             })
         },400);
-    },2500);
+    },100);
+
 };
 
-var paragraphExpand;
-var paraSelector;
 var expandButton;
-var expandButtonSelector;
-function expandParagraph(parent){
-    paraSelector = '.card:nth-child('+parent+') .card-text p'
-    expandButtonSelector = '.card:nth-child('+parent+') .card-text .read-more';
+var paraHeight;
+var containerSelector;
+var container;
 
-    expandButton = document.querySelector(expandButtonSelector);
-    paragraphExpand = document.querySelector(paraSelector);
-    console.log(paragraphExpand);
-    paragraphExpand.classList.toggle('expand');
+var expanded = false;
+
+function expandParagraph(cardNumber){
+
+    containerSelector = '.card:nth-child('+cardNumber+') .card-text .overview'
+
+    container = document.querySelector(containerSelector);
+    expandButton = container.nextElementSibling;
+
+    container.classList.toggle('expand');
+    paraHeight= container.children[0].offsetHeight;
+
+
+    if(!expanded){
+        container.style.height=paraHeight+25+'px';
+        expanded=true;
+    } else{
+        expanded=false;
+        container.style.height=5.6+'rem';
+    }
+
+
     if(expandButton.innerText === '...read more'){
         expandButton.innerText = 'read less';
     } else{
         expandButton.innerText = '...read more';
     }
+
 }
 
 
+
 ScrollOut({
-// once:true,
-// targets:['[data-scroll]','.card h2','.card::before'],
-threshold:0.4
+    once:true,
+    threshold:0.4
 });
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    allowTouchMove:true,
+    effect:"cards",
+    // autoplay:{
+    //     delay:3000
+    // },
+    grabCursor:true,
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  
+    // And if we need scrollbar
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+  });

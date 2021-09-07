@@ -14,6 +14,7 @@ html{
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    width: 100vw;
     font-family: $bodyFont;
 
 }
@@ -134,6 +135,30 @@ section{
         }
     }
 
+    .buttons{
+        display: flex;
+        gap: 10px;
+        button{
+            background: none;
+            border: none;
+            outline: none;
+            a{  
+                color: $gradientDarker;
+                border-radius: 100%;
+                padding: 10px;
+                font-size: 1.5rem;
+                background-color: hsla(197, 87%, 49%,0.2);
+                backdrop-filter: blur(10px);
+                cursor: pointer;
+                transition: all ease 0.5s;
+                &:hover{
+                    background-color: hsla(197, 87%, 49%,0.4);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
     @include mediaQ(mobile){
         padding: 5vw;
         margin: 5vh 0 0;
@@ -144,6 +169,7 @@ section{
             font-size: 2.5rem;
         }
     }
+
 }
 
 .logo{
@@ -324,6 +350,7 @@ header{
             transition: all ease 1.5s;
             background-image: linear-gradient(90deg, $gradientDarker, $gradientLighter);
 
+
             li a{
                 color: $White;
             }
@@ -350,11 +377,11 @@ header{
         .hero{
             padding: 10vh 0 0;
             margin: 0;
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            // position: absolute;
+            // bottom: 0;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
 
             .hero-img{
                 img{
@@ -530,7 +557,11 @@ main{
                     text-align: left;
                     color: $textGray;
                     line-height: $line-height;
-                    height: #{3*$line-height};
+                    
+                }
+                .overview{
+                    position: relative;
+                    height: #{4*$line-height};
                     overflow: hidden;
                     transition: height ease 1s;
 
@@ -538,17 +569,15 @@ main{
                         content: '';
                         position: absolute;
                         z-index: 100;
-                        inset: 65% 0 0 0;
+                        inset: 75% 0 0 0;
                         background-image: linear-gradient(to bottom, transparent, #fff);
                     }
 
                     &.expand{
-                        height: #{6*$line-height};
                         &::after{
                             display: none;
                         }
                     }
-                    
                 }
                 >button{
                     border: none;
@@ -561,39 +590,8 @@ main{
 
                 }
                 >button:nth-of-type(2){display: none;}
-                .buttons{
-                    display: flex;
-                    gap: 10px;
-                    button{
-
-                        border: none;
-                        outline: none;
-                        a{  
-                            color: $gradientDarker;
-                            border-radius: 100%;
-                            padding: 10px;
-                            font-size: 1.5rem;
-                            background-color: hsla(197, 87%, 49%,0.2);
-                            backdrop-filter: blur(10px);
-                            cursor: pointer;
-                            transition: all ease 0.5s;
-                            &:hover{
-                                background-color: hsla(197, 87%, 49%,0.4);
-                                transform: scale(1.1);
-                            }
-                        }
-                    }
-                }
+                
             }
-        }
-
-        .more{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
- 
-            
         }
 
         @include mediaQ(mobile){
@@ -630,6 +628,86 @@ main{
 
         }
 
+    }
+
+    .swiper{
+
+        margin: $paddingVer auto;
+        .swiper-slide{
+            width: 100%;
+            border-radius: 10px ;
+            position: relative;
+            overflow: hidden;
+            .overview{
+                position: absolute;
+                left:10%;
+                bottom: -50%;
+                transition: all ease 0.5s;
+                z-index: 100;
+            }
+    
+            h2{
+                color:$textPrimary;
+                font-size: 3.5rem;
+                font-weight: bold;
+                font-family: $fontH1;
+                margin-bottom: 10px;
+            }
+    
+            img{
+                filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.4)) ;
+                object-fit: contain;
+                border-radius: 10px;
+                width: 100%;
+            }
+    
+            &::after{
+                content: '';
+                position: absolute;
+                inset: 100% 0 0;
+                border-radius: 10px;
+                background-image: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
+                transition: all ease 0.5s;
+            }
+    
+            &:hover{
+    
+                &::after{
+                    top: 0;
+                }
+    
+                .overview{
+                    bottom: 10%;
+                }
+            }
+
+            .buttons button a{
+                font-size: unset;
+                padding: 5px;
+            }
+        }
+
+        .swiper-button-prev::after, .swiper-button-next::after{
+            font-size: unset;
+        }
+    
+        @include mediaQ(mobile){
+            .swiper-slide{
+                h2{
+                    font-size: unset;
+                }
+                
+            }
+        }
+    
+        
+    }
+    
+    .more{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;   
     }
 
     .contact-wrapper{
@@ -691,6 +769,8 @@ main{
         }
 
     }
+
+    
     
 }
 
@@ -734,6 +814,9 @@ footer{
         }
     }
 }
+
+
+
 
 
 @keyframes typewriter {

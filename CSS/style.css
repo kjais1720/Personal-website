@@ -14,6 +14,7 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  width: 100vw;
   font-family: "Montserrat Alternates", san-serif;
 }
 
@@ -158,6 +159,38 @@ section .section-heading h2[data-scroll='out'] {
   opacity: 0;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+}
+
+section .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+section .buttons button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+section .buttons button a {
+  color: #11aeeb;
+  border-radius: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  background-color: rgba(16, 172, 234, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: pointer;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+section .buttons button a:hover {
+  background-color: rgba(16, 172, 234, 0.4);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media only screen and (max-width: 650px) {
@@ -438,18 +471,6 @@ header .hamburger.is-active .hamburger-inner::after {
   header .hero {
     padding: 10vh 0 0;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   header .hero .hero-img img {
     bottom: 0;
@@ -674,26 +695,26 @@ main .works .card .card-text p {
   text-align: left;
   color: #808080;
   line-height: 1.4rem;
-  height: 4.2rem;
+}
+
+main .works .card .card-text .overview {
+  position: relative;
+  height: 5.6rem;
   overflow: hidden;
   -webkit-transition: height ease 1s;
   transition: height ease 1s;
 }
 
-main .works .card .card-text p::after {
+main .works .card .card-text .overview::after {
   content: '';
   position: absolute;
   z-index: 100;
-  inset: 65% 0 0 0;
+  inset: 75% 0 0 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
   background-image: linear-gradient(to bottom, transparent, #fff);
 }
 
-main .works .card .card-text p.expand {
-  height: 8.4rem;
-}
-
-main .works .card .card-text p.expand::after {
+main .works .card .card-text .overview.expand::after {
   display: none;
 }
 
@@ -709,50 +730,6 @@ main .works .card .card-text > button {
 
 main .works .card .card-text > button:nth-of-type(2) {
   display: none;
-}
-
-main .works .card .card-text .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-}
-
-main .works .card .card-text .buttons button {
-  border: none;
-  outline: none;
-}
-
-main .works .card .card-text .buttons button a {
-  color: #11aeeb;
-  border-radius: 100%;
-  padding: 10px;
-  font-size: 1.5rem;
-  background-color: rgba(16, 172, 234, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  cursor: pointer;
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
-}
-
-main .works .card .card-text .buttons button a:hover {
-  background-color: rgba(16, 172, 234, 0.4);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-main .works .more {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 @media only screen and (max-width: 650px) {
@@ -786,6 +763,90 @@ main .works .more {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+}
+
+main .swiper {
+  margin: 5vh auto;
+}
+
+main .swiper .swiper-slide {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+main .swiper .swiper-slide .overview {
+  position: absolute;
+  left: 10%;
+  bottom: -50%;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  z-index: 100;
+}
+
+main .swiper .swiper-slide h2 {
+  color: #008080;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Sacramento", cursive, san-serif;
+  margin-bottom: 10px;
+}
+
+main .swiper .swiper-slide img {
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4));
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  width: 100%;
+}
+
+main .swiper .swiper-slide::after {
+  content: '';
+  position: absolute;
+  inset: 100% 0 0;
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.4)));
+  background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4));
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+main .swiper .swiper-slide:hover::after {
+  top: 0;
+}
+
+main .swiper .swiper-slide:hover .overview {
+  bottom: 10%;
+}
+
+main .swiper .swiper-slide .buttons button a {
+  font-size: unset;
+  padding: 5px;
+}
+
+main .swiper .swiper-button-prev::after, main .swiper .swiper-button-next::after {
+  font-size: unset;
+}
+
+@media only screen and (max-width: 650px) {
+  main .swiper .swiper-slide h2 {
+    font-size: unset;
+  }
+}
+
+main .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .contact-wrapper {

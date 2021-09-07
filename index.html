@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+    <!-- <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+
     <link rel="icon" href="assets/images/KJ-logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="CSS/loader.css">
@@ -26,7 +31,7 @@
   </div>
 
 
-  <header>
+  <header id="header">
     <nav>
       <div class="logo">
         <a href="#"><img load='lazy' src="assets/images/KJ-logo.png" alt="logo"></a>
@@ -37,7 +42,10 @@
         </li>
         <li><a href="#skills">Skills</a></li>
         <li>
-          <a href="#works">Works</a>
+          <a href="#works">Projects</a>
+        </li>
+        <li>
+          <a href="#more-projects">More Projects</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -63,7 +71,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
       <section id="profile">
         <img load='lazy' id="profilePic" src="assets/images/Krituraj_Anand.png" alt="Krituraj Anand Profile Picture">
         <h2 data-scroll="">I am..</h2>
@@ -144,9 +152,11 @@
           <div class="card-img" data-scroll ><img load='lazy' src="assets/images/svh.png.jpg" alt=""></div>
           <div class='card-text'>
             <h2>SVH E-commerce Website</h2>
-            <p>The first commercial project that I built for a client. It's the front-end of an e-commerce website for a Hardware store. It is completely responsive and has multiple animations and database collection for Login/Signup.
-                I'm currently working on the backend and will finish the project within a month.
-            </p>
+            <div class="overview">
+              <p>The first commercial project that I built for a client. It's the front-end of an e-commerce website for a Hardware store. It is completely responsive and has multiple animations and database collection for Login/Signup.
+                  I'm currently working on the backend and will finish the project within a month.
+              </p>
+            </div>
             <button class="read-more" onclick="expandParagraph(2);">...read more</button><button class="read-more" onclick="expandParagraph(2);">read less</button>
             <div class="buttons">
               <button class="live-link"><a href="https://shreevishnuhardware.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
@@ -158,7 +168,9 @@
           <div class="card-img" data-scroll ><img load='lazy' src="assets/images/fylo.jpg" alt=""></div>
           <div class='card-text'>
             <h2>Fylo Landing Page</h2>
-            <p>An aestheically pleasing, completely responsive, dark themed landing page. I used the concepts of flex and Grid to design it, and used Javascript for the animations and functionalities. There are a lot of scroll animation libraries, but I used pure Javascript to build the animations, in order to strengthen my basics in Javascript.</p>
+            <div class="overview">
+              <p>An aestheically pleasing, completely responsive, dark themed landing page. I used the concepts of flex and Grid to design it, and used Javascript for the animations and functionalities. There are a lot of scroll animation libraries, but I used pure Javascript to build the animations, in order to strengthen my basics in Javascript.</p>
+            </div>
             <button class="read-more" onclick="expandParagraph(3);">...read more</button>
             <div class="buttons">
               <button class="live-link"><a href='https://fylo-landing-page-dun.vercel.app' target="_blank" class="fas fa-external-link-alt"></a></button>
@@ -170,7 +182,9 @@
           <div class="card-img" data-scroll ><img load='lazy' src="assets/images/calc.png" alt=""></div>
           <div class='card-text'>
             <h2>Calculator</h2>
-            <p>A fully functional and responsive multi themed calculator with theme toggle switch. This project really tested my prowess of Javascript and the concept of CSS variables. I also used 'SASS' for the first time, to build this project.</p>
+            <div class="overview">
+              <p>A fully functional and responsive multi themed calculator with theme toggle switch. This project really tested my prowess of Javascript and the concept of CSS variables. I also used 'SASS' for the first time, to build this project.</p>
+            </div>
             <button class="read-more" onclick="expandParagraph(4);">...read more</button>
             <div class="buttons">
               <button class="live-link"><a href="https://kjais-calculator.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
@@ -182,7 +196,9 @@
           <div class="card-img" data-scroll ><img load='lazy' src="assets/images/beep-boop.jpg" alt=""></div>
           <div class='card-text'>
             <h2>Beep Boop Game</h2>
-            <p>An simple & endless game which tests your memory. The player has to remember the exact order in which all the buttons were played, the difficulty inreases with each level. This was the first ever project that I built after learning Javascript.</p>
+            <div class="overview">
+              <p>An simple & endless game which tests your memory. The player has to remember the exact order in which all the buttons were played, the difficulty inreases with each level. This was the first ever project that I built after learning Javascript.</p>
+            </div>
             <button class="read-more" onclick="expandParagraph(5);">...read more</button>
             <div class="buttons">
               <button class="live-link"><a href="https://beep-boop.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
@@ -194,18 +210,90 @@
           <div class="card-img" data-scroll ><img load='lazy' src="assets/images/room.jpg" alt=""></div>
           <div class='card-text'>
             <h2>Room Landing Page</h2>
-            <p>A beautiful landing page for an e-commerce website, with a few functionalities. This is one of my favourite Frontendmentor challenges. I had challenged myself to build this page in an hour and I dit it. </p>
+            <div class="overview">
+              <p>A beautiful landing page for an e-commerce website, with a few functionalities. This is one of my favourite Frontendmentor challenges. I had challenged myself to build this page in an hour and I did it. </p>
+            </div>
             <button class="read-more" onclick="expandParagraph(6);">...read more</button>
             <div class="buttons">
               <button class="live-link"><a href="https://room-e-comm-landing-page.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
-              <button class="github"><a href="https://github.com/kjais1720/room-e-comm-landing targe-page.vercel.app" target="_blank" class="fab fa-github"></a></button>
+              <button class="github"><a href="https://github.com/kjais1720/room-e-comm-landing-page" target="_blank" class="fab fa-github"></a></button>
             </div>
           </div>
         </div>
-        <div class="more">
-          <p>and more on...</p>
-          <a href="https://github.com/kjais1720">Github <i class="fab fa-github"></i></a>
+        
+      </section>
+      <hr>
+
+      <section id="more-projects" class="more-projects">
+        <div class="section-heading">
+          <h2>More Micro projects</h2>
         </div>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="assets/images/minion.png" alt="">
+                <div class="overview">
+                  <h2>Minion Talk Translator</h2>
+                  <div class="buttons">
+                    <button class="live-link"><a href="https://banana-talk-flame.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
+                    <button class="github"><a href="https://github.com/kjais1720/Banana-talk" target="_blank" class="fab fa-github"></a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/google-search.png" alt="">
+                <div class="overview">
+                  <h2>Google Search Clone</h2>
+                  <div class="buttons">
+                    <button class="live-link"><a href="https://google-search-five.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
+                    <button class="github"><a href="https://github.com/kjais1720/Google-Search" target="_blank" class="fab fa-github"></a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/tindog.png" alt="">
+                <div class="overview">
+                  <h2>Tindog landing page</h2>
+                  <div class="buttons">
+                    <button class="live-link"><a href="https://tindog-one.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
+                    <button class="github"><a href="https://github.com/kjais1720/Tindog" target="_blank" class="fab fa-github"></a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/dad-jokes.png" alt="">
+                <div class="overview">
+                  <h2>Dad Joke Generator</h2>
+                  <div class="buttons">
+                    <button class="live-link"><a href="https://dad-jokes-ten.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
+                    <button class="github"><a href="https://github.com/kjais1720/Dad-Jokes" target="_blank" class="fab fa-github"></a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/testimonials-slider.png" alt="">
+                <div class="overview">
+                  <h2>Testimonials Slider</h2>
+                  <div class="buttons">
+                    <button class="live-link"><a href="https://testimonial-slider-ten.vercel.app" target="_blank" class="fas fa-external-link-alt"></a></button>
+                    <button class="github"><a href="https://github.com/kjais1720/Testimonial-slider" target="_blank" class="fab fa-github"></a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+          </div>
+
+          <div class="more">
+            <p>and more on...</p>
+            <a href="https://github.com/kjais1720">Github <i class="fab fa-github"></i></a>
+          </div>
+
       </section>
       <hr>
 
@@ -228,15 +316,17 @@
   <footer>
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/krituraj-anand/" target="blank"><b>LinkedIn</b></a>
-        <a href="https://kjais1720.github.io/Personal-site/" target="_blank"><b>Website</b></a>
+        <a href="#" target="_blank"><b>Website</b></a>
         <a href="https://github.com/kjais1720" target="_blank"><b>Github</b></a>
     </div>
     <div class="footer-logo logo">
-      <img src="assets/images/KJ-logo.png" alt="">
+      <a href="#"><img src="assets/images/KJ-logo.png" alt="Logo"></a>
     </div>
     <p id="copyright">©2021 Krituraj Anand</p>
   </footer>
 
+    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+    <script src="jquery.particleground.min.js"></script>
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="index.js"></script>
     
