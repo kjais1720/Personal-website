@@ -249,14 +249,16 @@ header{
 
             .animatedText span{
                 opacity: 0;
-                transform: scale(0);
-                transition: all ease 1s;
-                // animation: typewriter ease 3s 1;
+                transform: translateY(-400px);
+                position: relative;
+                bottom: 400px;
+                transition: all cubic-bezier(.47,1.64,.41,.8) 1s;
             }
             .animatedText.active span{
                 opacity: 1;
-                transform: scale(1);
-                transition: all ease 1s;
+                bottom: 0;
+                transform:translateY(0);
+                transition: all cubic-bezier(.47,1.64,.41,.8) 1s;
 
             }
         }
@@ -561,7 +563,7 @@ main{
                 }
                 .overview{
                     position: relative;
-                    height: #{4*$line-height};
+                    height: #{3*$line-height};
                     overflow: hidden;
                     transition: height ease 1s;
 
@@ -681,22 +683,23 @@ main{
                 }
             }
 
-            .buttons button a{
-                font-size: unset;
-                padding: 5px;
-            }
         }
-
-        .swiper-button-prev::after, .swiper-button-next::after{
-            font-size: unset;
-        }
-    
+        
+        
         @include mediaQ(mobile){
+            padding: 0 10vw;
             .swiper-slide{
                 h2{
                     font-size: unset;
                 }
+                .buttons button a{
+                    font-size: unset;
+                    padding: 5px;
+                }
                 
+            }
+            .swiper-button-prev::after, .swiper-button-next::after{
+                font-size: unset;
             }
         }
     

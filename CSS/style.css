@@ -316,18 +316,21 @@ header .hero .cloud:nth-child(2) {
 
 header .hero #title .animatedText span {
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: all ease 1s;
-  transition: all ease 1s;
+  -webkit-transform: translateY(-400px);
+          transform: translateY(-400px);
+  position: relative;
+  bottom: 400px;
+  -webkit-transition: all cubic-bezier(0.47, 1.64, 0.41, 0.8) 1s;
+  transition: all cubic-bezier(0.47, 1.64, 0.41, 0.8) 1s;
 }
 
 header .hero #title .animatedText.active span {
   opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all ease 1s;
-  transition: all ease 1s;
+  bottom: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all cubic-bezier(0.47, 1.64, 0.41, 0.8) 1s;
+  transition: all cubic-bezier(0.47, 1.64, 0.41, 0.8) 1s;
 }
 
 header .hero .hero-img {
@@ -699,7 +702,7 @@ main .works .card .card-text p {
 
 main .works .card .card-text .overview {
   position: relative;
-  height: 5.6rem;
+  height: 4.2rem;
   overflow: hidden;
   -webkit-transition: height ease 1s;
   transition: height ease 1s;
@@ -821,17 +824,18 @@ main .swiper .swiper-slide:hover .overview {
   bottom: 10%;
 }
 
-main .swiper .swiper-slide .buttons button a {
-  font-size: unset;
-  padding: 5px;
-}
-
-main .swiper .swiper-button-prev::after, main .swiper .swiper-button-next::after {
-  font-size: unset;
-}
-
 @media only screen and (max-width: 650px) {
+  main .swiper {
+    padding: 0 10vw;
+  }
   main .swiper .swiper-slide h2 {
+    font-size: unset;
+  }
+  main .swiper .swiper-slide .buttons button a {
+    font-size: unset;
+    padding: 5px;
+  }
+  main .swiper .swiper-button-prev::after, main .swiper .swiper-button-next::after {
     font-size: unset;
   }
 }

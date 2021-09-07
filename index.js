@@ -39,19 +39,47 @@ animatedText.forEach(text =>{
             .join('');
     })
 
+
+// animatedText.forEach(text => text.style.opacity=0);
+
 window.onload=toggle;
 function toggle(){
     setTimeout(()=>{
         document.body.classList.add('loaded');
+        // animatedText[0].classList.add('active');
         setTimeout(()=>{
             animatedText.forEach(e=>{
-                e.classList.toggle('active');
-            })
+                    e.classList.add('active');
+                })
+            // animatedText[1].classList.add('active');
+            // setTimeout(()=>animatedText[1].classList.add('active'),1000);
+            // typeText(animatedText[0]);
+            // typeText(animatedText[1]);
         },400);
-    },100);
+    },2000);
 
 };
 
+//Render text like a typewriter
+function typeText(text){
+    const translatedText = text.innerText;
+    text.innerHTML = '';
+    text.style.opacity = 1;
+    var counter=0;
+    var finalText='';
+    
+    const typing = setInterval(()=>{
+        if(counter<translatedText.length){
+            finalText = translatedText.slice(0,counter+1);
+            text.innerHTML = finalText;
+            counter++;
+        } else{
+            clearInterval(typing);
+        }
+    },100);
+}
+
+//To add the function to expand the paragraph
 var expandButton;
 var paraHeight;
 var containerSelector;
@@ -75,7 +103,7 @@ function expandParagraph(cardNumber){
         expanded=true;
     } else{
         expanded=false;
-        container.style.height=5.6+'rem';
+        container.style.height=4.2+'rem';
     }
 
 
@@ -95,14 +123,10 @@ ScrollOut({
 });
 
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
     direction: 'horizontal',
     loop: true,
     allowTouchMove:true,
     effect:"cards",
-    // autoplay:{
-    //     delay:3000
-    // },
     grabCursor:true,
   
     // Navigation arrows
@@ -111,8 +135,4 @@ const swiper = new Swiper('.swiper', {
       prevEl: '.swiper-button-prev',
     }
   
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
   });
