@@ -1,10 +1,12 @@
 const animatedText=document.querySelectorAll(".animatedText")
 const nav = document.querySelector("nav")
 const navToggle = document.querySelector('.hamburger')
+const blob = document.querySelector('.blob');
 
 navToggle.addEventListener('click',()=>{
     nav.classList.toggle('active')
     navToggle.classList.toggle('is-active')
+    blob.classList.toggle('show')
 });
 
 var prevScrollPos = window.pageYOffset;
@@ -14,6 +16,7 @@ window.onscroll = ()=>{
 
     navToggle.classList.remove('is-active')
     nav.classList.remove("active")
+    blob.classList.remove('show')
 
     var currentScrollPos = window.pageYOffset;
     if(currentScrollPos > 200){
@@ -21,11 +24,13 @@ window.onscroll = ()=>{
     }
     else{
         nav.classList.remove("showBg");
+        blob.classList.remove('show');
     }
     if (prevScrollPos > currentScrollPos){
         nav.style.top='0'
     } else {
         nav.style.top='-200px';
+        blob.classList.remove('show');
     }
     prevScrollPos = currentScrollPos
 }
@@ -56,7 +61,7 @@ function toggle(){
             // typeText(animatedText[0]);
             // typeText(animatedText[1]);
         },400);
-    },2000);
+    },200);
 
 };
 
